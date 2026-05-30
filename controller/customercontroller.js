@@ -35,7 +35,7 @@ try {
         if(!ismatch){
             res.status(400).json({message:"invalid password"})
         }
-        const token=jwt.sign({name:existingcustomer.name,email:existingcustomer.email,id:existingcustomer._id,address:existingcustomer.address,phone:existingcustomer.phone,role:existingcustomer.role},process.env.jwt_secret,{expiresIn:'2d'})
+        const token=jwt.sign({name:existingcustomer.name,email:existingcustomer.email,id:existingcustomer._id,address:existingcustomer.address,phone:existingcustomer.phone,role:existingcustomer.role},"KALAI",{expiresIn:'2d'})
          res.json({message:"login successfully" ,token:token})
 
         

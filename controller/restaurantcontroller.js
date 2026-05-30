@@ -37,7 +37,7 @@ try {
             existingresta.status = "open";
             await existingresta.save();
 
-        const token=jwt.sign({restaurantname:existingresta.restaurantname,email:existingresta.email,password:existingresta.password,id:existingresta._id,address:existingresta.address,phone:existingresta.phone,role:existingresta.role,restaturantopen:existingresta.restaurantopen},process.env.jwt_secret,{expiresIn:'1d'})
+        const token=jwt.sign({restaurantname:existingresta.restaurantname,email:existingresta.email,password:existingresta.password,id:existingresta._id,address:existingresta.address,phone:existingresta.phone,role:existingresta.role,restaturantopen:existingresta.restaurantopen},"KALAI",{expiresIn:'1d'})
          res.json({message:"login successfully" ,token})
 
         
